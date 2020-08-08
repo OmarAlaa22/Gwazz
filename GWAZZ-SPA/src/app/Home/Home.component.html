@@ -1,0 +1,17 @@
+<div  class="rtl container mt-5">
+  <div *ngIf="!registermode" style="text-align: center">
+    <h2 >زواج يأتي لك بشريكك في الحياة</h2>
+    <h5 style="  font-family: 'El Messiri', sans-serif;">تخيل حياتك مع توأم روحك. مع زواج، أنت الآن على بعد خطوة من تحقيق حلمك</h5>
+    <div class="text-center">
+      <button  style=" font-family: 'El Messiri', sans-serif;" class="btn btn-secondary btn-lg btn-secondary" (click)="registershow()">إشترك معنا</button>
+       </div>
+  </div>
+
+  <div *ngIf="registermode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <app-Register [valusefromregister]="values" (cancelRegister)="registercancel($event)"></app-Register>
+      </div>
+    </div>
+  </div>
+</div>

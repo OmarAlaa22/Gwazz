@@ -7,10 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ZwagApp.API.Model;
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace zwagApp.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -29,7 +30,7 @@ namespace zwagApp.API.Controllers
             _logger = logger;
             db=_db;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async  Task<IActionResult> Get()
         {

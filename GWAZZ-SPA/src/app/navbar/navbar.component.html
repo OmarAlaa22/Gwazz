@@ -1,0 +1,44 @@
+<nav class="rtl navbar navbar-expand-md navbar-dark bg-dark">
+  <a style="margin-top:-10px;color:pink;
+font-family: 'Rakkas', cursive;
+font-size:2.25rem;font-weight:bolder" class="navbar-brand"
+    href="#"><i class="fa fa-heart" aria-hidden="true"></i>زواج<i class="fa fa-heart" aria-hidden="true"></i></a>
+
+  <ul style="letter-spacing:1px;font-weight:bold;font-size:1.2rem;   
+  " class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="#">الرئيسية </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">بحث</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">تواصل</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">دردشة</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="IsLogin()" class="nav-link" (click)="LogedOut()">تسجيل الخروج</a>
+    </li>
+  </ul>
+<!--After Login-->
+  <button *ngIf="IsLogin()" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    مرحبا بك
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+  <!--After Login-->
+
+  <form *ngIf="!IsLogin()" (ngSubmit)="Login()" #LoginForm="ngForm" class="form-inline my-2 my-lg-0">
+    <input name="username" required class="form-control mr-sm-2" type="text" placeholder="إسم المشترك" [(ngModel)]="model.username">
+    <input name="password" required class="form-control mr-sm-2" type="password" placeholder="كلمة السر" [(ngModel)]="model.password">
+    <button [disabled]=" ! LoginForm.valid" style="font-weight:bold;font-family:'JF Flat';font-size:1.0rem" class="btn btn-secondary my-2 my-sm-0" type="submit">تفضل
+      بالدخول</button>
+  </form>
+</nav>

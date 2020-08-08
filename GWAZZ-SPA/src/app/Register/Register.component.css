@@ -1,0 +1,5 @@
+.btn-secondary:hover {
+    text-decoration: none;
+    color: black !important;
+    background:pink !important
+      }
