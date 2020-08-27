@@ -13,3 +13,10 @@
     background:pink !important
       }
 
+.prof >*{
+font-family: fantasy;
+font-size: 20px;
+}
+.dropdownToggle,.dropdown-item{
+  cursor: pointer;
+}

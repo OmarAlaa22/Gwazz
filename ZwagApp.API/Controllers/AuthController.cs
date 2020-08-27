@@ -40,7 +40,7 @@ namespace ZwagApp.API.Controllers
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto logdto){
-          var userfomrepo =await repo.Login(logdto.Username.ToLower(),logdto.Password);
+                 var userfomrepo =await repo.Login(logdto.Username.ToLower(),logdto.Password);
             if(userfomrepo==null){return Unauthorized(); }
                     var claims=new[]{
                     new Claim (ClaimTypes.NameIdentifier,userfomrepo.Id.ToString()),
@@ -60,8 +60,9 @@ namespace ZwagApp.API.Controllers
 
                         token=tokenhandler.WriteToken(token)
                     });
+            }
+       
 
         }
         
     }
-}

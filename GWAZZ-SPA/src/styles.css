@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap-v4-rtl/dist/css/bootstrap-rtl.css';
 @import '~font-awesome/css/font-awesome.css';
-
+@import '~alertifyjs/build/css/alertify.min.css';
+@import "~../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import '~bootswatch/dist/sketchy/bootstrap.min.css';
+@import '~alertifyjs/build/css/themes/bootstrap.rtl.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&family=Changa:wght@500;600&display=swap');
 /*font-family: 'Rakkas', cursive;*/
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Rakkas&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=Lemonada:wght@600&family=Rakkas&display=swap');
+@import url("assets/MYSyles.css");
 h2,a{
 
     font-family: 'El Messiri', sans-serif;

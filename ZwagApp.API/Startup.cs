@@ -16,6 +16,10 @@
     using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using ZwagApp.API.Helpers;
 
 namespace zwagApp.API
     {
@@ -57,6 +61,21 @@ namespace zwagApp.API
                 if (env.IsDevelopment())
                 {
                     app.UseDeveloperExceptionPage();
+                }
+                else{
+                    app.UseExceptionHandler(BuilderExtensions=>
+                    {
+BuilderExtensions.Run(async DataContext=>{
+DataContext.Response.StatusCode=(int)HttpStatusCode.InternalServerError;
+var error= DataContext.Features.Get<IExceptionHandlerFeature>();
+if(error !=null){
+    DataContext.Response.AddAplicationError(error.Error.Message);
+    await DataContext.Response.WriteAsync(error.Error.Message);
+}
+
+});
+
+                    });
                 }
     app.UseCors(x=>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader() );
 
