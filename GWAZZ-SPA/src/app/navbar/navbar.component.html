@@ -2,21 +2,21 @@
   <a style="margin-top:-10px;color:pink;
 font-family: 'Rakkas', cursive;
 font-size:2.25rem;font-weight:bolder" class="navbar-brand"
-    href="#"><i class="fa fa-heart" aria-hidden="true"></i>زواج<i class="fa fa-heart" aria-hidden="true"></i></a>
+   [routerLink]="['/home']" routerLinkActive="router-link-active" ><i class="fa fa-heart" aria-hidden="true"></i>زواج<i class="fa fa-heart" aria-hidden="true"></i></a>
 
   <ul  *ngIf="IsLogin()" style="letter-spacing:1px;font-weight:bold;font-size:1.2rem;   
   " class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" href="#">الرئيسية </a>
+      <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >الرئيسية </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">بحث</a>
+    <li class="nav-item"routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/member']">بحث</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">تواصل</a>
+    <li class="nav-item"routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/fav']">تواصل</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">دردشة</a>
+    <li class="nav-item"routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/message']">دردشة</a>
     </li>
   </ul>
 <!--After Login-->

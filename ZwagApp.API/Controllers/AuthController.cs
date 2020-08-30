@@ -34,9 +34,7 @@ namespace ZwagApp.API.Controllers
             Username=dto.UserName
             };
             var createuser= await repo.Register(newuser,dto.Password);
-            var x=timer.Elapsed;
             return StatusCode(201);
-
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto logdto){

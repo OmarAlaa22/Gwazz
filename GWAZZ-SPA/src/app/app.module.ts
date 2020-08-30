@@ -12,6 +12,12 @@ import { ErrorInterseptorProvider } from './_Services/Error.interseptor';
 import { AlertifyService } from './_Services/alertify.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MemberComponent } from './member/member.component';
+import { FavouriteListComponent } from './Favourite-List/Favourite-List.component';
+import { MessageComponent } from './Message/Message.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -19,11 +25,14 @@ export function tokenGetter() {
    return localStorage.getItem('access_token');
  }
 @NgModule({
-   declarations: [
+   declarations: [			
       AppComponent,
       NavbarComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberComponent,
+      FavouriteListComponent,
+      MessageComponent
    ],
    imports: [
       BrowserModule,
@@ -37,12 +46,14 @@ export function tokenGetter() {
          }
        }),
        BrowserAnimationsModule,
-       BsDropdownModule.forRoot()      
+       BsDropdownModule.forRoot(),
+       RouterModule.forRoot(appRoutes)   
    ],
    providers: [
       AuthService,
       ErrorInterseptorProvider,
       AlertifyService,
+      AuthGuard
       
 
    ],
